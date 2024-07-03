@@ -1,7 +1,5 @@
 # OCW6.006_introtoalgo2020
 
-Alright, I'll provide even more detailed notes for lectures 1 to 5, including all relevant definitions and concepts, and corresponding textbook sections.
-
 ### Lecture 1: Course Introduction and Efficient Algorithms
 
 #### Course Overview
@@ -17,30 +15,32 @@ Alright, I'll provide even more detailed notes for lectures 1 to 5, including al
 
 #### Efficiency and Complexity
 - **Time Complexity**: Measures the amount of time an algorithm takes as a function of the input size.
-  - **Example**: Linear search in a list of size \( n \) takes \( O(n) \) time.
+  - **Example**: Linear search in a list of size $\( n \)$ takes $\( O(n) \)$ time.
   - **Best Case, Worst Case, Average Case**: Different scenarios based on input characteristics.
 
 - **Space Complexity**: Measures the amount of memory an algorithm uses as a function of the input size.
 
 #### Asymptotic Notation
-- **Big-O Notation (\( O \))**:
+- **Big-O Notation $(\( O \))$**:
   - **Purpose**: To describe the upper bound on the time complexity of an algorithm, representing the worst-case scenario.
-  - **Formal Definition**: \( f(n) = O(g(n)) \) if there exist constants \( c > 0 \) and \( n_0 \) such that for all \( n \geq n_0 \), \( f(n) \leq c \cdot g(n) \).
-  - **Example**: \( 3n^2 + 2n + 1 = O(n^2) \).
-  - **Interpretation**: The algorithm's running time grows no faster than \( g(n) \) up to a constant factor.
+  - **Formal Definition**: $\( f(n) = O(g(n)) \)$ if there exist constants $\( c > 0 \)$ and $\( n_0 \)$ such that for all $\( n \geq n_0 \)$, $\( f(n) \leq c \cdot g(n) \)$.
+  - **Example**: $\( 3n^2 + 2n + 1 = O(n^2) \)$.
+  - **Interpretation**: The algorithm's running time grows no faster than $\( g(n) \)$ up to a constant factor.
 
-- **Big-Omega Notation (\( \Omega \))**:
+- **Big-Omega Notation $(\( \Omega \))$**:
   - **Purpose**: To describe the lower bound on the time complexity of an algorithm, representing the best-case scenario.
-  - **Formal Definition**: \( f(n) = \Omega(g(n)) \) if there exist constants \( c > 0 \) and \( n_0 \) such that for all \( n \geq n_0 \), \( f(n) \geq c \cdot g(n) \).
+  - **Formal Definition**: $\( f(n) = \Omega(g(n)) \)$ if there exist constants $\( c > 0 \)$ and $\( n_0 \)$ such that for all $\( n \geq n_0 \)$, $\( f(n) \geq c \cdot g(n) \)$.
   - **Example**: \( 3n^2 + 2n + 1 = \Omega(n^2) \).
 
-- **Big-Theta Notation (\( \Theta \))**:
-  - **Purpose**: To describe a tight bound on the time complexity of an algorithm, meaning it is both \( O(g(n)) \) and \( \Omega(g(n)) \).
-  - **Formal Definition**: \( f(n) = \Theta(g(n)) \) if there exist constants \( c_1, c_2 > 0 \) and \( n_0 \) such that for all \( n \geq n_0 \), \( c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) \).
-  - **Example**: \( 3n^2 + 2n + 1 = \Theta(n^2) \).
+- **Big-Theta Notation $(\( \Theta \))$**:
+  - **Purpose**: To describe a tight bound on the time complexity of an algorithm, meaning it is both $\( O(g(n)) \)$ and $\( \Omega(g(n)) \)$.
+  - **Formal Definition**: $\( f(n) = \Theta(g(n)) \)$ if there exist constants $\( c_1, c_2 > 0 \)$ and $\( n_0 \)$ such that for all $\( n \geq n_0 \)$, $\( c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) \)$.
+  - **Example**: $\( 3n^2 + 2n + 1 = \Theta(n^2) \)$.
 
 #### Corresponding Textbook Sections
 - "Introduction to Algorithms" by Cormen, Leiserson, Rivest, and Stein (CLRS), Chapter 2 (Sections 2.1, 2.2, 2.3).
+
+<div style="page-break-after: always;"></div>
 
 ### Lecture 2: Asymptotic Notations and Recurrences
 
@@ -54,23 +54,25 @@ Alright, I'll provide even more detailed notes for lectures 1 to 5, including al
 #### Recurrences
 - **Definition**: Equations or inequalities that describe a function in terms of its value on smaller inputs.
 - **Examples**:
-  - **Merge Sort Recurrence**: \( T(n) = 2T(n/2) + O(n) \).
-  - **Binary Search Recurrence**: \( T(n) = T(n/2) + O(1) \).
+  - **Merge Sort Recurrence**: $\( T(n) = 2T(n/2) + O(n) \)$.
+  - **Binary Search Recurrence**: $\( T(n) = T(n/2) + O(1) \)$.
 
 #### Solving Recurrences
 - **Substitution Method**: Guess the form of the solution and prove by induction.
-  - **Example**: For merge sort, guess \( T(n) = O(n \log n) \).
+  - **Example**: For merge sort, guess $\( T(n) = O(n \log n) \)$.
 
 - **Recursion Tree Method**: Visualize the recurrence as a tree and sum the work done at each level.
-  - **Example**: For merge sort, each level of the tree does \( O(n) \) work, and there are \( O(\log n) \) levels.
+  - **Example**: For merge sort, each level of the tree does $\( O(n) \)$ work, and there are $\( O(\log n) \)$ levels.
 
 - **Master Theorem**: Provides a solution for recurrences of the form \( T(n) = aT(n/b) + f(n) \).
-  - **Case 1**: If \( f(n) = O(n^c) \) where \( c < \log_b a \), then \( T(n) = \Theta(n^{\log_b a}) \).
-  - **Case 2**: If \( f(n) = \Theta(n^{\log_b a}) \), then \( T(n) = \Theta(n^{\log_b a} \log n) \).
-  - **Case 3**: If \( f(n) = \Omega(n^c) \) where \( c > \log_b a \), and if \( a f(n/b) \leq k f(n) \) for some \( k < 1 \) and sufficiently large \( n \), then \( T(n) = \Theta(f(n)) \).
+  - **Case 1**: If $\( f(n) = O(n^c) \)$ where $\( c < \log_b a \)$, then $\( T(n) = \Theta(n^{\log_b a}) \)$.
+  - **Case 2**: If $\( f(n) = \Theta(n^{\log_b a}) \)$, then $\( T(n) = \Theta(n^{\log_b a} \log n) \)$.
+  - **Case 3**: If $\( f(n) = \Omega(n^c) \)$ where $\( c > \log_b a \)$, and if $\( a f(n/b) \leq k f(n) \)$ for some $\( k < 1 \)$ and sufficiently large $\( n \)$, then $\( T(n) = \Theta(f(n)) \)$.
 
 #### Corresponding Textbook Sections
 - CLRS, Chapter 3 (Sections 3.1, 3.2, 3.3).
+
+<div style="page-break-after: always;"></div>
 
 ### Lecture 3: Divide and Conquer
 
@@ -88,7 +90,7 @@ Alright, I'll provide even more detailed notes for lectures 1 to 5, including al
       1. Divide the array into two halves.
       2. Recursively sort each half.
       3. Merge the two sorted halves.
-    - **Time Complexity**: \( O(n \log n) \).
+    - **Time Complexity**: $\( O(n \log n) \)$.
     - **Pseudocode**:
       ```python
       def merge_sort(arr):
@@ -128,8 +130,8 @@ Alright, I'll provide even more detailed notes for lectures 1 to 5, including al
       2. Partition the array such that elements less than the pivot are on the left, and elements greater than the pivot are on the right.
       3. Recursively sort the left and right subarrays.
     - **Time Complexity**:
-      - **Average Case**: \( O(n \log n) \).
-      - **Worst Case**: \( O(n^2) \) (when the pivot is the smallest or largest element).
+      - **Average Case**: $\( O(n \log n) \)$.
+      - **Worst Case**: $\( O(n^2) \)$ (when the pivot is the smallest or largest element).
     - **Pseudocode**:
       ```python
       def quick_sort(arr):
@@ -163,7 +165,7 @@ Alright, I'll provide even more detailed notes for lectures 1 to 5, including al
                 j -= 1
             arr[j + 1] = key
     ```
-  - **Time Complexity**: \( O(n^2) \).
+  - **Time Complexity**: $\( O(n^2) \)$.
 
 - **Selection Sort**:
   - **Definition**: A simple comparison-based sorting algorithm.
@@ -178,7 +180,7 @@ Alright, I'll provide even more detailed notes for lectures 1 to 5, including al
                     min_idx = j
             arr[i], arr[min_idx] = arr[min_idx], arr[i]
     ```
-  - **Time Complexity**: \( O(n^2) \).
+  - **Time Complexity**: $\( O(n^2) \)$.
 
 #### Heaps and Heap Sort
 - **Heap**:
@@ -223,7 +225,7 @@ Alright, I'll provide even more detailed notes for lectures 1 to 5, including al
             arr[i], arr[0] = arr[0], arr[i]
             heapify(arr, i, 0)
     ```
-  - **Time Complexity**: \( O(n \log n) \).
+  - **Time Complexity**: $\( O(n \log n) \)$.
 
 #### Corresponding Textbook Sections
 - CLRS, Chapter 6 (Sections 6.1, 6.2, 6.3).
@@ -310,8 +312,8 @@ Alright, I'll provide even more detailed notes for lectures 1 to 5, including al
       ```
 
 - **Time Complexity**:
-  - **Average Case**: \( O(\log n) \).
-  - **Worst Case**: \( O(n) \) (when the tree becomes unbalanced).
+  - **Average Case**: $\( O(\log n) \)$.
+  - **Worst Case**: $\( O(n) \)$ (when the tree becomes unbalanced).
 
 #### Corresponding Textbook Sections
 - CLRS, Chapter 12 (Sections 12.1, 12.2, 12.3).
@@ -323,7 +325,7 @@ Let's continue with detailed notes for the remaining lectures and corresponding 
 #### AVL Trees
 - **Definition**: A self-balancing binary search tree where the height difference between the left and right subtrees of any node is at most one.
 - **Properties**: Maintains a balance factor for each node, which is the height difference between the left and right subtrees.
-- **Balance Factor**: For any node \( N \), \( \text{balance factor} = \text{height(left subtree)} - \text{height(right subtree)} \).
+- **Balance Factor**: For any node $\( N \)$, $\( \text{balance factor} = \text{height(left subtree)} - \text{height(right subtree)} \)$.
   - **Balance Factor Values**:
     - **-1, 0, 1**: The tree is balanced.
     - **> 1 or < -1**: The tree is unbalanced and requires rebalancing.
@@ -436,7 +438,7 @@ Let's continue with detailed notes for the remaining lectures and corresponding 
       return get_height(root.left) - get_height(root.right)
   ```
 
-- **Time Complexity**: \( O(\log n) \) for insertion, deletion, and search.
+- **Time Complexity**: $\( O(\log n) \)$ for insertion, deletion, and search.
 
 #### Corresponding Textbook Sections
 - CLRS, Chapter 13 (Sections 13.1, 13.2, 13.3).
@@ -574,8 +576,8 @@ Let's continue with detailed notes for the remaining lectures and corresponding 
 - **Definition**: A self-balancing search tree in which nodes can have multiple children, optimized for systems that read and write large blocks of data.
 - **Properties**:
   - All leaves are at the same level.
-  - A B-tree of order \( m \) can have at most \( m \) children.
-  - Internal nodes can contain up to \( m-1 \) keys.
+  - A B-tree of order $\( m \)$ can have at most $\( m \)$ children.
+  - Internal nodes can contain up to $\( m-1 \)$ keys.
   - Keys in nodes are kept in sorted order.
 - **Operations**:
   - **Search**: Similar to binary search within nodes.
@@ -806,8 +808,8 @@ Let's continue with detailed notes for the remaining lectures and corresponding 
   - **Convex Hull**: Finding the smallest convex polygon that can contain a set of points.
   - **Closest Pair of Points**: Finding the two closest points in a set.
 - **Algorithms**:
-  - **Graham's Scan**: Finds the convex hull in \( O(n \log n) \) time.
-  - **Divide and Conquer for Closest Pair**: Finds the closest pair of points in \( O(n \log n) \) time.
+  - **Graham's Scan**: Finds the convex hull in $\( O(n \log n) \)$ time.
+  - **Divide and Conquer for Closest Pair**: Finds the closest pair of points in $\( O(n \log n) \)$ time.
 - **Pseudocode for Graham's Scan**:
   ```python
   def graham_scan(points):
@@ -837,7 +839,7 @@ Let's continue with detailed notes for the remaining lectures and corresponding 
 - **Definition**: Algorithms used to find approximate solutions to optimization problems, particularly useful when exact solutions are computationally expensive.
 - **Key Concepts**:
   - **Approximation Ratio**: The ratio between the cost of the approximation solution and the cost of the optimal solution.
-  - **Polynomial-Time Approximation Scheme (PTAS)**: An algorithm that for any \( \epsilon > 0 \), produces a \( (1 + \epsilon) \)-approximation in polynomial time.
+  - **Polynomial-Time Approximation Scheme (PTAS)**: An algorithm that for any $\( \epsilon > 0 \)$, produces a $\( (1 + \epsilon) \)$-approximation in polynomial time.
 - **Examples**:
   - **Vertex Cover**: Finding a subset of vertices such that every edge is incident to at least one vertex in the subset.
   - **Traveling Salesman Problem (TSP)**: Finding the shortest possible route that visits each city exactly once and returns to the origin city.
