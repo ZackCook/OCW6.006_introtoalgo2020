@@ -1,0 +1,9 @@
+* Sorting visualizer *
+
+Part 1
+- Implement a sorting analyzer for bubble, insertion, selection and merge (Python or JS)
+- sorting visualizer will be updated with other sorting algorithms as course progresses
+
+Part 2
+- Hand roll a dynamic array, stack and hash table with all operations implmented (Scala or C)
+- write driver programs for each DS that allows a user to unsert and delete data as well as perform any unique operations
