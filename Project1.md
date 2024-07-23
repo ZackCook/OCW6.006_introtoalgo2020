@@ -1,4 +1,4 @@
-## Project 1 Part 1: Sorting visualizer ##
+## Project 1 Part 1: Sorting visualizer 1 ##
 - Implement a sorting analyzer for bubble, insertion, selection and merge (Python)
 - sorting visualizer will be updated with other sorting algorithms as course progresses
 ---
